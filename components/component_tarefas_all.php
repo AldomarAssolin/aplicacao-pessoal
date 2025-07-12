@@ -1,4 +1,4 @@
- <div class="d-flex justify-content-between align-items-center mb-3">
+ <div class="d-flex justify-content-between align-items-center mb-3 border-bottom">
      <h3>Tarefas</h3>
      <a href="views/tarefas.php" class="btn btn-sm btn-success">Adicionar</a>
  </div>
@@ -13,7 +13,7 @@
                              <?= ucfirst($t['status']) ?>
                          </span>
                      </h5>
-                     <p class="card-subtitle mb-2 text-body-secondary"><?= htmlspecialchars($t['descricao']) ?></p>
+                     <p class="card-subtitle mb-2 text-body-light"><?= htmlspecialchars($t['descricao']) ?></p>
                      <a href="controller/TarefasController.php?concluir= <?= $t['id'] ?>" class="btn btn-sm btn-success">Concluir</a>
                      <a href="controller/TarefasController.php?excluir=<?= $t['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Confirma excluir?')">Excluir</a>
                  </div>

@@ -12,13 +12,14 @@ if (session_status() === PHP_SESSION_NONE) {
     <title><?= $titulo ?? 'Minha Aplicação' ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="<?php echo $URL ?>assets/css/estilo.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-dark text-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="<?= $URL ?>dashboard.php">ManexApp</a>
             <div>
                 <?php if (isset($_SESSION['usuario'])): ?>
@@ -31,4 +32,4 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </div>
     </nav>
-    <main class="container py-4">
+    <main>

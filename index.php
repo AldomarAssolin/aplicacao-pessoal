@@ -15,6 +15,7 @@ session_start();
     <title>Manex | Desenvolvedor & Técnico</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         body {
             background-color: #1f1f2e;
@@ -23,6 +24,12 @@ session_start();
 
         .highlight {
             color: #58a6ff;
+        }
+        @media screen and (max-width: 576px) {
+            html{
+                font-size: 0.65rem; /* Ajusta o tamanho da fonte para telas pequenas */
+            }
+            
         }
     </style>
 </head>

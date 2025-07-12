@@ -4,13 +4,11 @@ require 'controller/TarefasController.php';
 
 ?>
 
-<h3>Tarefas</h3>
-<hr>
-
+<h3 class="border-bottom">Tarefas</h3>
 <div class="row g-4 mt-4">
     <div class="col-4">
         <h3>Pendentes</h3>
-        <div class="bg-primary text-white rounded-3 p-2">
+        <div class="kanban bg-warning text-white rounded-3 p-2">
             <?php
             if (isset($tarefas) && count($tarefas) > 0) {
                 foreach ($tarefas as $tarefa) {
@@ -19,7 +17,9 @@ require 'controller/TarefasController.php';
                         echo "<div class='card-body'>";
                         echo "<h5 class='card-title'>" . htmlspecialchars($tarefa['titulo']) . "</h5>";
                         echo "<p class='card-text'>" . htmlspecialchars($tarefa['descricao']) . "</p>";
-                        echo "<a href='controller/TarefasController.php?concluir=" . $tarefa['id'] . "' class='btn btn-sm btn-success'>Concluir</a>";
+                        echo "</div>";
+                        echo "<div class='card-footer d-flex justify-content-center'>";
+                        echo "<a href='controller/TarefasController.php?concluir=" . $tarefa['id'] . "' class='btn btn-sm btn-success mx-1'>Concluir</a>";
                         echo "<a href='controller/TarefasController.php?excluir=" . $tarefa['id'] . "' class='btn btn-sm btn-danger' onclick=\"return confirm('Confirma excluir?')\">Excluir</a>";
                         echo "</div></div>";
                     }
@@ -32,7 +32,7 @@ require 'controller/TarefasController.php';
     </div>
     <div class="col-4">
         <h3>Concluídas</h3>
-        <div class="bg-success text-white rounded-3 p-2">
+        <div class="kanban bg-success text-white rounded-3 p-2">
             <?php
             if (isset($tarefas) && count($tarefas) > 0) {
                 foreach ($tarefas as $tarefa) {
@@ -41,6 +41,8 @@ require 'controller/TarefasController.php';
                         echo "<div class='card-body'>";
                         echo "<h5 class='card-title'>" . htmlspecialchars($tarefa['titulo']) . "</h5>";
                         echo "<p class='card-text'>" . htmlspecialchars($tarefa['descricao']) . "</p>";
+                        echo "</div>";
+                        echo "<div class='card-footer d-flex justify-content-center'>";
                         echo "<a href='controller/TarefasController.php?excluir=" . $tarefa['id'] . "' class='btn btn-sm btn-danger' onclick=\"return confirm('Confirma excluir?')\">Excluir</a>";
                         echo "</div></div>";
                     }
@@ -52,9 +54,9 @@ require 'controller/TarefasController.php';
         </div>
     </div>
     <div class="col-4">
-        <div class="row mt-5">
+        <div class="kanban row mt-5">
+            <h5 class="text-center mb-3">Resumo das Tarefas</h5>
             <div class="col-md-6 mx-auto">
-                <h5 class="text-center mb-3">Resumo das Tarefas</h5>
                 <canvas id="graficoTarefas"></canvas>
             </div>
         </div>
